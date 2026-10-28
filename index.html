@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karibeth Julissa Junco Vilca | Perfil Profesional</title>
+
+  <!-- Tipografías Profesionales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --font-principal: 'Plus Jakarta Sans', sans-serif;
+      --font-titulos: 'Cinzel', serif;
+
+      --bg-color: #622f38;
+      --card-bg: #b76d7c;
+      --card-sub: #df9fc8;
+      --accent-gold: #2013cf;
+      --accent-gold-hover: #A3813C;
+      --accent-cyan: #0F172A;
+      --text-light: #0F172A;
+      --text-muted: #475569;
+      --border-color: #010811;
+      --tag-bg: rgba(29, 49, 98, 0.614);
+
+      --input-bg: #df9fc8;
+      --input-text: #000613;
+      --input-border: #df9fc8;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-principal);
+      background-color: var(--bg-color);
+      color: var(--text-light);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    h1, h2, h3, h4, .section-title {
+      font-family: var(--font-titulos);
+    }
+
+    /* TARJETAS CONTENEDORAS */
+    .section-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(34, 197, 94, 0.15);
+      color: #15803d;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+    }
+
+    /* CAJA DE CONTACTO DE LA CABECERA */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      background-color: var(--card-sub);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .contact-value {
+      color: var(--text-light);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-value:hover {
+      text-decoration: underline;
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      background-color: var(--tag-bg);
+      color: #000000e6;
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      color: var(--text-light);
+      margin-bottom: 22px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-number {
+      font-size: 0.82rem;
+      font-family: var(--font-principal);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .academic-grid, .tech-grid, .soft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .academic-box, .tech-card, .soft-card {
+      background-color: var(--card-sub);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .academic-title, .tech-title, .soft-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    .academic-sub, .tech-desc, .soft-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      background-color: var(--card-sub);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-weight: 700;
+      color: var(--text-light);
+      font-size: 0.98rem;
+    }
+
+    .timeline-org {
+      font-weight: 600;
+      color: #0f172a;
+      font-size: 0.9rem;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ESTILOS DEL FORMULARIO DE CONTACTO */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 20px auto 0;
+      text-align: left;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background-color: var(--input-bg);
+      color: var(--input-text);
+      outline: none;
+    }
+
+    .form-input::placeholder {
+      color: #64748b;
+    }
+
+    .btn-submit {
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #1e293b;
+    }
+
+    .btn-linkedin {
+      display: inline-block;
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-linkedin:hover {
+      background-color: #1e293b;
+    }
+
+    .mensaje-confirmacion {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #ffffff;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- PILAR 1: DATOS DE CONTACTO E IDENTIDAD -->
+    <header class="section-card">
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Disponible 
+      </div>
+
+      <h1>KARIBETH JULISSA JUNCO VILCA</h1>
+      <h2>Estudiante de la Carrera de Derecho | 6°to Ciclo</h2>
+    </p>
+
+    <p id="salida2"></p>
+      <div>
+        <div>
+ <!-- CONTENEDOR FLEXIBLE: FOTO A LA IZQUIERDA Y PERFIL AL COSTADO -->
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+
+  <!-- Foto Circular -->
+  <img src="foto-congreso.jpg.jpeg" alt="foto de Karibeth Junco" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 2px solid var; flex-shrink: 0;">
+
+  <!-- Caja de Perfil Profesional -->
+  <div style="flex: 1; min-width: 280px; background-color: var(--card-sub, #df9fc8); padding: 25px; border-radius: 20px; border: 1px solid var(--border-color, #010811);">
+    <h3 style="font-family: var(--font-titulos, 'Cinzel', serif); font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; text-transform: uppercase;">
+     Sobre mí
+    </h3>
+    <p style="font-size: 0.92rem; color: #0f172a; line-height: 1.6;text-align:justify;">
+    Estudiante de Derecho con proyección e interés académico orientado al Derecho Corporativo, Financiero, Mercado de Capitales y Regulación Económica. Me motiva profundizar en la estructuración contractual, las operaciones bancarias e instrumentos de garantía como los fideicomisos. Busco articular el estudio de la teoría del acto jurídico con la comprensión del marco supervisor y la libre competencia, sumado a un constante interés por la transformación digital (LegalTech & IA) para desarrollarme laboralmente en el sector empresarial, fiduciario e institucional.
+    </p>
+  </div>
+  </div>
+      <style>
+            /* Alineación perfecta de la foto junto a tu nombre */
+    .header-profile-layout {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo-container {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%; /* Mantén 50% para foto circular o cambia a 12px para tarjeta cuadrada */
+      overflow: hidden;
+      border: 3px solid var(--border-color, #d8e9ff);
+      box-shadow: 0 4px 12px rgba(245, 239, 239, 0.25);
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+        </style>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">UBICACIÓN</span>
+          <span class="contact-value">Lima - Perú</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">CORREO ELECTRÓNICO</span>
+          <a href="mailto:karibethjunco6@gmail.com" class="contact-value">karibethjunco6@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">TELÉFONO</span>
+          <a href="tel:+51913725205" class="contact-value">+51 913 725 205</a>
+        </div>
+      </div>
+      <div class="pills-container">
+        <span class="pill">Liderazgo y gestión de equipos</span>
+        <span class="pill">Pensamiento analítico y estratégico</span>
+        <span class="pill">Trabajo bajo objetivos y adaptabilidad</span>
+        <span class="pill">Comunicación estratégica</span>
+        <span class="pill">Ética profesional y rigor en el cumplimiento</span>
+      </div>
+    </header>
+
+    <!-- PILAR 2: FORMACIÓN ACADÉMICA -->
+     <section class="section-card">
+      <div class="section-title">
+        <span>ROLES DE IMPACTO & EXPERIENCIA PRÁCTICA</span>
+        <span class="section-number"></span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Coordinadora del Área Académica</span>
+            <span class="timeline-date">2025 – 2026</span>
+          </div>
+          <div class="timeline-org">Asociación Just Avant — Universidad Científica del Sur</div>
+          <div class="timeline-desc"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Miembro de Litigio Estratégico</span>
+            <span class="timeline-date">2026 </span>
+          </div>
+          <div class="timeline-org">Clínica de Litigación Ambiental Científica | Universidad Científica del Sur</div>
+          <div class="timeline-desc"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Integrante del Equipo Finalista - Proyecto AgroBridge</span>
+            <span class="timeline-date">2025 – 2026</span>
+          </div>
+          <div class="timeline-org">Concurso Hult Prize Científica</div>
+          <div class="timeline-desc"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-role">Apoyo jurídico en el Segundo Juzgado de Paz letrado de Familia</span>
+            <span class="timeline-date">3 meses</span>
+          </div>
+          <div class="timeline-org">Poder Judicial de Chorrillos</div>
+          <div class="timeline-desc"></div>
+        </div>
+    </section>
+
+    <!-- PILAR 3: EXPERIENCIA Y ROLES -->
+    <section class="section-card">
+      <div class="section-title">
+        <span>FORMACIÓN ACADÉMICA</span>
+        <span class="section-number"></span>
+      </div>
+
+      <div class="academic-grid">
+        <div class="academic-box">
+          <div class="academic-title">Universidad Científica del Sur</div>
+          <div class="academic-sub">Facultad de Derecho y Economía</div>
+        </div>
+
+        <div class="academic-box">
+          <div class="academic-title">Centro de Idiomas | Universidad Científica del Sur</div>
+          <div class="academic-sub">Inglés intermedio 1 | B1 </div>
+        </div>
+      </div>
+
+      <h4 style="margin-top: 25px; margin-bottom: 12px; color: var(--text-light); font-size: 0.98rem;">Diplomados & Microcredenciales</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-org">Universidad Autónoma de Chile</div>
+          <div class="timeline-role">Microcredencial Internacional en Inteligencia Artificial y Protección del Consumidor</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-org">Udeapolis & Ilustre Colegio de Abogados de Cañete</div>
+          <div class="timeline-role">Diplomado Especializado en Derecho Notarial, Registral e Inmobiliario</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-org">Udeapolis & Ilustre Colegio de Abogados de Cañete</div>
+          <div class="timeline-role">Diplomado a la proteción del consumidor</div>
+        </div>
+      </div>
+    </section>
+
+  <!-- PILAR 4: VOLUNTARIADOS -->
+  <section class="section-card">
+    <div class="section-header" style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <span class="section-title-text" style="font-family: var(--font-titulos, 'Cinzel', serif); font-size: 1.3rem; font-weight: 700; color: #0f172a;">
+        VOLUNTARIADOS
+      </span>
+      <span class="section-number" style="font-size: 0.85rem; color: #475569; font-weight: 600;"></span>
+    </div>
+
+    <!-- EVIDENCIAS FOTOGRÁFICAS DE LOS VOLUNTARIADOS (2 IMÁGENES) -->
+    <h4 style="font-size: 0.95rem; font-family: var(--font-titulos, 'Cinzel', serif); color: #0f172a; margin-bottom: 15px; text-transform: uppercase;">
+      
+    </h4>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;">
+      <!-- FOTO 1 VOLUNTARIADO -->
+      <div style="background-color: var(--card-sub, #df9fc8); border: 1px solid var(--border-color, #010811); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 180px; overflow: hidden;">
+          <img src="foto-amyase.jpg.jpeg" alt="AM YASE" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 12px; text-align: center;">
+          <h5 style="font-size: 0.88rem; color: #0f172a; font-weight: 700; margin-bottom: 3px;">AM YASE</h5>
+          <p style="font-size: 0.78rem; color: #0f172a;">Programa de apoyo comunitario enfocado en empoderar al adulto mayor mediante la enseñanza de competencias digitales (uso de smartphones, Google y redes sociales) y el desarrollo de talleres didácticos sobre hábitos saludables y estimulación cognitiva.</p>
+        </div>
+      </div>
+
+      <!-- FOTO 2 VOLUNTARIADO -->
+<div style="background-color: var(--card-sub, #df9fc8); border: 1px solid var(--border-color, #010811); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;">
+  <div style="height: 180px; overflow: hidden;">
+    <img src="foto-mapeo.jpg.jpeg" alt="Voluntariado Tech and Law" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+  <div style="padding: 12px; text-align: center;">
+    <h5 style="font-size: 0.88rem; color: #0f172a; font-weight: 700; margin-bottom: 6px;">Voluntariado de la Iniciativa Tech & Law</h5>
+    <p style="font-size: 0.78rem; color: #0f172a; text-align: justify; line-height: 1.4;">
+      Participo activamente en el área de Mapeo LegalTech, un programa académico y extracurricular orientado a sistematizar el impacto, la regulación y las implicancias ético-legales de la transformación digital e Inteligencia Artificial en el entorno jurídico.
+    </p>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE PARTICIPACIÓN Y TRAYECTORIA (SOLO FOTOS LIMPIAS) -->
+<section class="section-card" style="margin-top: 30px;">
+  <div class="section-title" style="border-bottom: 2px solid var(--border-color, #010811); padding-bottom: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <span style="font-family: var(--font-titulos, 'Cinzel', serif); font-size: 1.3rem; font-weight: 700; color: #0f172a;">
+      Eventos
+    </span>
+    <span style="font-size: 0.85rem; color: #475569; font-weight: 600;"></span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;">
+    
+    <!-- Foto 1 -->
+    <div style="background-color: var(--card-sub, #df9fc8); border: 1px solid var(--border-color, #010811); border-radius: 12px; overflow: hidden; height: 220px;">
+      <img src="foto- woman in public law,jpg.jpeg" alt="Participación Institucional 1" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Foto 2 -->
+    <div style="background-color: var(--card-sub, #df9fc8); border: 1px solid var(--border-color, #010811); border-radius: 12px; overflow: hidden; height: 220px;">
+      <img src="foto-conversatorio.jpg.jpeg" alt="Participación Institucional 2" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Foto 3 -->
+    <div style="background-color: var(--card-sub, #df9fc8); border: 1px solid var(--border-color, #010811); border-radius: 12px; overflow: hidden; height: 220px;">
+      <img src="foto-clac.jpg.jpeg" alt="Participación Institucional 3" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+  </div>
+</section>
+
+  <!-- FORMULARIO DE CONTACTO PROFESIONAL -->
+  <section class="section-card" style="text-align: center; margin-top: 30px;">
+    <div class="section-title" style="border-bottom: 2px solid var(--border-color, #010811); padding-bottom: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-family: var(--font-titulos, 'Cinzel', serif); font-size: 1.3rem; font-weight: 700; color: #0f172a;">CONTACTO PROFESIONAL</span>
+      <span class="section-number" style="font-size: 0.85rem; color: #475569; font-weight: 600;"></span>
+    </div>
+
+    <p style="font-size: 0.95rem; color: #0f172a; margin-top: 10px;">
+      ¿Tienes alguna consulta, propuesta de colaboración o proyecto en mente?<br> Escríbeme y conversemos:
+    </p>
+
+    <!-- Formulario interactivo -->
+    <form class="contact-form" id="formContacto" onsubmit="enviarMensaje(event)" style="max-width: 500px; margin: 20px auto 0; text-align: left;">
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label for="nombre" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Nombre</label>
+        <input type="text" id="nombre" class="form-input" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 12px;">
+        <label for="correo" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Correo</label>
+        <input type="email" id="correo" class="form-input" placeholder="correo@ejemplo.com" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="mensaje" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Mensaje</label>
+        <textarea id="mensaje" class="form-input" rows="3" placeholder="Escribe tu consulta o saludo aquí..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" style="background-color: #0f172a; color: #fff; padding: 10px 22px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%;">Enviar Mensaje</button>
+    </form>
+
+    <!-- Mensaje de confirmación en pantalla -->
+    <div id="confirmacion" class="mensaje-confirmacion" style="margin-top: 15px; font-weight: 700; color: #15803d; display: none;"></div>
+
+    <hr style="margin: 25px 0 20px; border: none; border-top: 1px solid var(--border-color);">
+
+    <a href="https://www.linkedin.com/in/karibeth-junco" target="_blank" class="btn-linkedin" style="background-color: #0f172a; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">
+      Ver Perfil en LinkedIn
+    </a>
+  </section>
+
+  <footer>
+    <p style="text-align: center; color: #ffffff; margin-top: 25px; font-size: 0.85rem;">© 2026 | Karibeth Julissa Junco Vilca • Perfil Profesional </p>
+  </footer>
+
+  <script>
+    function enviarMensaje(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const confirmacion = document.getElementById("confirmacion");
+      const formulario = document.getElementById("formContacto");
+
+      confirmacion.innerText = `¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.`;
+      confirmacion.style.display = "block";
+
+      formulario.reset();
+    }
+  </script>
+
+</body>
+</html>
