@@ -575,38 +575,30 @@
 </section>
 
   <!-- FORMULARIO DE CONTACTO PROFESIONAL -->
-  <section class="section-card" style="text-align: center; margin-top: 30px;">
-    <div class="section-title" style="border-bottom: 2px solid var(--border-color, #010811); padding-bottom: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
-      <span style="font-family: var(--font-titulos, 'Cinzel', serif); font-size: 1.3rem; font-weight: 700; color: #0f172a;">CONTACTO PROFESIONAL</span>
-      <span class="section-number" style="font-size: 0.85rem; color: #475569; font-weight: 600;"></span>
-    </div>
-
-    <p style="font-size: 0.95rem; color: #0f172a; margin-top: 10px;">
-      ¿Tienes alguna consulta, propuesta de colaboración o proyecto en mente?<br> Escríbeme y conversemos:
-    </p>
 
     <!-- Formulario interactivo -->
-    <form class="contact-form" id="formContacto" onsubmit="enviarMensaje(event)" style="max-width: 500px; margin: 20px auto 0; text-align: left;">
+    <form class="contact-form" id="formContacto" action="https://formsubmit.co/el/gucifa" method="POST" style="max-width: 500px; margin: 20px auto 0; text-align: left;">
+      <!-- Configuraciones de FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://karibethjunco6-byte.github.io/PerfilProfesional_KaribethJunco/">
+
       <div class="form-group" style="margin-bottom: 12px;">
         <label for="nombre" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Nombre</label>
-        <input type="text" id="nombre" class="form-input" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+        <input type="text" id="nombre" name="Nombre" class="form-input" placeholder="Escribe tu nombre" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
       </div>
 
       <div class="form-group" style="margin-bottom: 12px;">
         <label for="correo" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Correo</label>
-        <input type="email" id="correo" class="form-input" placeholder="correo@ejemplo.com" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+        <input type="email" id="correo" name="Correo" class="form-input" placeholder="correo@ejemplo.com" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
       </div>
 
       <div class="form-group" style="margin-bottom: 15px;">
         <label for="mensaje" style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Mensaje</label>
-        <textarea id="mensaje" class="form-input" rows="3" placeholder="Escribe tu consulta o saludo aquí..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);"></textarea>
+        <textarea id="mensaje" name="Mensaje" class="form-input" rows="3" placeholder="Escribe tu consulta o saludo aquí..." required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);"></textarea>
       </div>
 
       <button type="submit" class="btn-submit" style="background-color: #0f172a; color: #fff; padding: 10px 22px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%;">Enviar Mensaje</button>
     </form>
-
-    <!-- Mensaje de confirmación en pantalla -->
-    <div id="confirmacion" class="mensaje-confirmacion" style="margin-top: 15px; font-weight: 700; color: #15803d; display: none;"></div>
 
     <hr style="margin: 25px 0 20px; border: none; border-top: 1px solid var(--border-color);">
 
@@ -618,21 +610,6 @@
   <footer>
     <p style="text-align: center; color: #ffffff; margin-top: 25px; font-size: 0.85rem;">© 2026 | Karibeth Julissa Junco Vilca • Perfil Profesional </p>
   </footer>
-
-  <script>
-    function enviarMensaje(event) {
-      event.preventDefault();
-
-      const nombre = document.getElementById("nombre").value;
-      const confirmacion = document.getElementById("confirmacion");
-      const formulario = document.getElementById("formContacto");
-
-      confirmacion.innerText = `¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.`;
-      confirmacion.style.display = "block";
-
-      formulario.reset();
-    }
-  </script>
 
 </body>
 </html>
