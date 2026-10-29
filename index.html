@@ -573,46 +573,83 @@
   </div>
 </section>
 
- <!-- FORMULARIO DE CONTACTO PROFESIONAL -->
-<form class="contact-form" id="formContacto" onsubmit="enviarMensaje(event)" style="max-width: 700px; width: 100%; margin: 25px auto 0; text-align: left;">
+<!-- SECCIÓN DE CONTACTO PROFESIONAL -->
+  <section class="contact-section" style="max-width: 700px; width: 100%; margin: 30px auto; text-align: left;">
+    <h2 style="text-align: center;">Contacto Profesional</h2>
+    <p style="text-align: center; font-size: 0.9rem; color: #555;">Escribe tu mensaje para iniciar contacto o acceder a mi perfil profesional</p>
 
-  <div class="form-group" style="margin-bottom: 15px;">
-    <label for="nombre" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Nombre</label>
-    <input type="text" id="nombre" class="form-input" placeholder="Escribe tu nombre" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-sizing: border-box;">
-  </div>
+    <!-- Formulario interactivo -->
+    <form class="contact-form" id="formContacto" style="width: 100%;">
 
-  <div class="form-group" style="margin-bottom: 15px;">
-    <label for="correo" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Correo</label>
-    <input type="email" id="correo" class="form-input" placeholder="correo@ejemplo.com" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-sizing: border-box;">
-  </div>
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="nombre" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Nombre</label>
+        <input type="text" id="nombre" class="form-input" placeholder="Escribe tu nombre" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color, #ccc); box-sizing: border-box;">
+      </div>
 
-  <div class="form-group" style="margin-bottom: 20px;">
-    <label for="mensaje" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Mensaje</label>
-    <textarea id="mensaje" class="form-input" rows="5" placeholder="Escribe tu consulta o saludo aquí..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); box-sizing: border-box;"></textarea>
-  </div>
+      <div class="form-group" style="margin-bottom: 15px;">
+        <label for="correo" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Correo</label>
+        <input type="email" id="correo" class="form-input" placeholder="correo@ejemplo.com" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color, #ccc); box-sizing: border-box;">
+      </div>
 
-  <!-- Botón Enviar con ancho medio centrado -->
-  <div style="text-align: center;">
-    <button type="submit" class="btn-submit" style="background-color: #0f172a; color: #fff; padding: 12px 30px; font-size: 1rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 60%; max-width: 400px;">Enviar Mensaje</button>
-  </div>
-</form>
-  <!-- Botón Enviar con ancho medio centrado -->
-  <div style="text-align: center;">
-    <button type="submit" class="btn-submit" style="background-color: #0f172a; color: #fff; padding: 12px 30px; font-size: 1rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 60%; max-width: 400px;">Enviar Mensaje</button>
-  </div>
-</form>
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label for="mensajeTexto" style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 6px;">Mensaje</label>
+        <textarea id="mensajeTexto" class="form-input" rows="5" placeholder="Escribe tu consulta o saludo aquí..." required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color, #ccc); box-sizing: border-box;"></textarea>
+      </div>
 
-<hr style="margin: 30px 0 20px; border: none; border-top: 1px solid var(--border-color);">
+      <!-- Botón de enviar centrado -->
+      <div style="text-align: center;">
+        <button type="button" id="enviar" class="btn-submit" style="background-color: #0f172a; color: #fff; padding: 12px 30px; font-size: 1rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; width: 60%; max-width: 400px;">Enviar Mensaje</button>
+      </div>
+    </form>
 
-<!-- Botón LinkedIn de ancho completo -->
-<a href="https://www.linkedin.com/in/karibeth-junco" target="_blank" class="btn-linkedin" style="background-color: #0f172a; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; display: block; text-align: center; width: 100%; box-sizing: border-box;">
-  Ver Perfil en LinkedIn
-</a>
+    <!-- Párrafo para desplegar mensajes de error o confirmación -->
+    <p id="mensajeConfirmacion" style="margin-top: 20px; padding: 12px; border-radius: 8px; font-weight: 700; text-align: center; display: none;"></p>
+
+    <hr style="margin: 30px 0 20px; border: none; border-top: 1px solid var(--border-color, #ccc);">
+
+    <!-- Enlace a LinkedIn -->
+    <a href="https://www.linkedin.com/in/karibeth-junco" target="_blank" class="btn-linkedin" style="background-color: #0f172a; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; display: block; text-align: center; width: 100%; box-sizing: border-box;">
+      Ver Perfil en LinkedIn
+    </a>
   </section>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p style="text-align: center; color: #ffffff; margin-top: 25px; font-size: 0.85rem;">© 2026 | Karibeth Julissa Junco Vilca • Perfil Profesional </p>
+    <p style="text-align: center; color: #ffffff; margin-top: 25px; font-size: 0.85rem;">© 2026 | Karibeth Julissa Junco Vilca • Perfil Profesional</p>
   </footer>
+
+  <!-- SCRIPT DE VALIDACIÓN E INTERACCIÓN -->
+  <script>
+    // Búsqueda de elementos en el DOM
+    const boton = document.getElementById("enviar");
+    const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+
+    // Evento de clic en el botón de validar/enviar
+    boton.addEventListener("click", function () {
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const texto = document.getElementById("mensajeTexto").value.trim();
+
+      // Validación: revisa si faltan campos por llenar
+      if (nombre === "" || correo === "" || texto === "") {
+        mensajeConfirmacion.textContent = "Por favor, completa todos los campos requeridos.";
+        mensajeConfirmacion.style.backgroundColor = "#fee2e2";
+        mensajeConfirmacion.style.color = "#991b1b";
+        mensajeConfirmacion.style.display = "block";
+        return;
+      }
+
+      // Si todo está correcto, muestra el mensaje de éxito en verde y limpia el formulario
+      mensajeConfirmacion.textContent = `¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.`;
+      mensajeConfirmacion.style.backgroundColor = "#dcfce7";
+      mensajeConfirmacion.style.color = "#15803d";
+      mensajeConfirmacion.style.display = "block";
+
+      document.getElementById("formContacto").reset();
+    });
+  </script>
 
 </body>
 </html>
+
+  
